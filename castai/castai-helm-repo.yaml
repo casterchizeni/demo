@@ -6,3 +6,4 @@ metadata:
 spec:
   interval: 5m
   url: https://castai.github.io/helm-charts
+

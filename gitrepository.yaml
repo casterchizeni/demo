@@ -5,6 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 5m
-  url: https://github.com/casterchizeni/demo
+  url: https://github.com/casterchizeni/gitops.git
   ref:
     branch: main
+

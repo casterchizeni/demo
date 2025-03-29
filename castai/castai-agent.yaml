@@ -12,16 +12,18 @@ spec:
         kind: HelmRepository
         name: castai-helm
         namespace: flux-system
-  valuesFrom:
-    - kind: Secret
-      name: castai-credentials
-      valuesKey: apiKey
-      targetPath: apiKey
   values:
-    provider: gke               # Replace with one of: gke, eks, or aks
+    provider: gke
     readonly: true
     createNamespace: false
     replicaCount: 1
+    metadataStore:
+      enabled: true
+    envFrom:
+      - secretRef:
+          name: api-key-secret
+      - configMapRef:
+          name: cluster-id-config
     resources:
       requests:
         cpu: "100m"
