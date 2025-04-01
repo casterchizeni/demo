@@ -15,15 +15,12 @@ spec:
   values:
     provider: gke
     readonly: true
-    createNamespace: false
-    replicaCount: 1
+    createNamespace: true
     metadataStore:
       enabled: true
     envFrom:
       - secretRef:
           name: api-key-secret
-      - configMapRef:
-          name: cluster-id-config
     resources:
       requests:
         cpu: "100m"
