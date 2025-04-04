@@ -6,7 +6,6 @@ metadata:
 spec:
   interval: 1m
   path: ./castai
-  targetNamespace: castai-agent
   prune: true
   sourceRef:
     kind: GitRepository
